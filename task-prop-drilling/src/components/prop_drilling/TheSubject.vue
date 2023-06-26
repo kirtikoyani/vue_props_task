@@ -34,5 +34,6 @@ export default {
     width: 100%;
     flex-direction: column;
     background: white;
+    border: 1px solid;
 }
 </style>

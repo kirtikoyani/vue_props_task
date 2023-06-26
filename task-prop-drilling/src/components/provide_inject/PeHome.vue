@@ -109,7 +109,7 @@ export default {
     display: flex;
     justify-content: center;
     width: calc(90% + 44px);
-    border: 1px solid;
+    gap:20px;
     margin: 0 auto;
 }
 

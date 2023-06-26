@@ -104,8 +104,8 @@ export default {
     display: flex;
     justify-content: center;
     width: calc(90% + 44px);
-    border: 1px solid;
     margin: 0 auto;
+    gap:20px;
 }
 
 .title {
