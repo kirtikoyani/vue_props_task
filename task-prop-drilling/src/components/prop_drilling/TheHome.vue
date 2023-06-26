@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1 class="title">Subjects</h1>
+    <h1 class="title">Props Drilling</h1>
     <div class="subjectList">
         <the-subject v-for="subject in subjects" :key="subject.id" :subject="subject" @name-updat="getName" />
     </div>
