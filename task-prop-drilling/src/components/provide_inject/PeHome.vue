@@ -2,7 +2,7 @@
 <div>
     <h1 class="title">Provide Inject</h1>
     <div class="subjectList">
-        <pe-subject v-for="subject in subjects" :key="subject.id" :subject="subject" />
+        <pe-subject v-for="subject in subjects" :key="subject.id" />
     </div>
 </div>
 </template>
@@ -12,7 +12,7 @@ import PeSubject from './PeSubject.vue';
 
 export default {
     components: {
-        PeSubject,
+        PeSubject
     },
     data() {
         return {
@@ -33,14 +33,35 @@ export default {
                         {
                             id: 13,
                             rollNo: '013',
-                            name: 'Adarsh Parmar '
-                        },
-                    ],
+                            name: 'Adarsh Parmar'
+                        }
+                    ]
                 },
                 {
                     id: 4,
                     name: 'Hindi',
                     description: 'Hindi has been described as a standardised and Sanskritised',
+                    students: [{
+                            id: 11,
+                            rollNo: '011',
+                            name: 'Kirti Koyani'
+                        },
+                        {
+                            id: 13,
+                            rollNo: '013',
+                            name: 'Adarsh Parmar'
+                        },
+                        {
+                            id: 14,
+                            rollNo: '014',
+                            name: 'Amish Joshi'
+                        }
+                    ]
+                },
+                {
+                    id: 5,
+                    name: 'Gujrati',
+                    description: 'Gujarati is an Indo-Aryan language native to Gujarat',
                     students: [{
                             id: 11,
                             rollNo: '011',
@@ -56,35 +77,15 @@ export default {
                             rollNo: '014',
                             name: 'Amish Joshi'
                         }
-                    ],
-                },
-                {
-                    id: 5,
-                    name: 'Gujrati',
-                    description: 'Gujarati is an Indo-Aryan language native to the Gujarat',
-                    students: [{
-                            id: 11,
-                            rollNo: '011',
-                            name: 'Kirti Koyani'
-                        },
-                        {
-                            id: 14,
-                            rollNo: '014',
-                            name: 'Amish Joshi'
-                        },
-                        {
-                            id: 13,
-                            rollNo: '013',
-                            name: 'Adarsh Parmar '
-                        }
-                    ],
-                },
-            ],
+                    ]
+                }
+            ]
         };
     },
     provide() {
         return {
-            updateStudentName: this.updateStudentName,
+            subjects: () => this.subjects,
+            updateStudentName: this.updateStudentName
         };
     },
     methods: {
@@ -109,7 +110,7 @@ export default {
     display: flex;
     justify-content: center;
     width: calc(90% + 44px);
-    gap:20px;
+    gap: 20px;
     margin: 0 auto;
 }
 

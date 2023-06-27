@@ -13,9 +13,10 @@
 </div>
 </template>
 
+
 <script>
 export default {
-    inject: ['subjects', 'updateStudentName'],
+    inject: ['students', 'updateStudentName'],
     data() {
         return {
             isEditing: false,
@@ -26,10 +27,10 @@ export default {
         this.student()
     },
     methods: {
-         student() {
-            const subjects = this.subjects();
-            const student = subjects.flatMap(subject => subject.students).find(student => student.id === this.$vnode.key);
-            return student;
+        student() {
+            const students = this.students();
+            const matchedStudent = students.find(student => student.id === this.$vnode.key);
+            return matchedStudent;
         },
         editName() {
             this.isEditing = true;
@@ -49,3 +50,8 @@ export default {
     }
 };
 </script>
+
+
+<style>
+/* Styles for PeStudents component */
+</style>
