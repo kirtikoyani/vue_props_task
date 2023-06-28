@@ -5,7 +5,7 @@
         <h4>Name: {{ student().name }}</h4>
         <button class="btn" v-if="!isEditing" @click="editName">Edit Name</button>
         <div v-if="isEditing">
-            <input class="input" type="text" id="fname" v-model="editedName" />
+            <input class="input" type="text" v-model="editedName" />
             <button class="btn-save" @click="saveName">Save</button>
             <button class="btn-cansal" @click="cancelEdit">Cancel</button>
         </div>
