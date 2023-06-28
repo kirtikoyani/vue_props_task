@@ -24,7 +24,8 @@ export default {
         };
     },
     created() {
-        this.student()
+        this.student();
+        this.editedName = this.student().name;
     },
     methods: {
         student() {
@@ -34,6 +35,7 @@ export default {
         },
         editName() {
             this.isEditing = true;
+            this.editedName = this.student().name;
         },
         saveName() {
             const updatedStudent = {

@@ -33,6 +33,7 @@ export default {
         },
         editName() {
             this.isEditing = true;
+            this.editedName = this.student().name;
         },
         saveName() {
             const updatedStudent = {
