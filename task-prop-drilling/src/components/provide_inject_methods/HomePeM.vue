@@ -73,7 +73,7 @@ export default {
             } = updatedStudent;
             const student = this.students.find(student => student.id === id);
             if (student) {
-                this.students.splice(name, 1, updatedStudent);
+                student.name = name;
             }
         }
     }
