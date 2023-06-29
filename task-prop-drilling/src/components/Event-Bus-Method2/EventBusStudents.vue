@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import {EventBus} from '@/eventBus';
 export default {
     props: {
         subject: {
@@ -47,7 +48,7 @@ export default {
                 name: this.editedName
             };
             this.isEditing = false;
-            this.$emit('name-updated', updatedStudent);
+            EventBus.$emit('updatedStudent', updatedStudent);
         },
         cancelEdit() {
             this.isEditing = false;
